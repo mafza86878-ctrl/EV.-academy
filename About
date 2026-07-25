@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — EV Academy</title>
+<meta name="description" content="Learn about EV Academy's mission to bring real, practical learning to one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">EV</span>
+      <span class="logo-word">Academy</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow reveal">about us</p>
+    <h1 class="page-title reveal">Why EV Academy exists</h1>
+  </section>
+
+  <section class="about-body">
+    <div class="about-block reveal">
+      <h2>The idea</h2>
+      <p>
+        EV Academy started with a simple frustration: good learning is
+        scattered across too many apps, too many logins, and too many
+        half-finished courses. Students end up spending more time
+        managing platforms than actually learning.
+      </p>
+      <p>
+        EV Academy is being built as one home for that learning — a
+        single place where students can find real classes, taught
+        directly, without the noise.
+      </p>
+    </div>
+
+    <div class="about-block reveal">
+      <h2>The mission</h2>
+      <p>
+        To make practical, high-quality learning accessible in one
+        place — starting small, staying honest about what's ready and
+        what's still being built, and growing subject by subject based
+        on what students actually need.
+      </p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <span class="feature-num">01</span>
+        <h3>Honesty over hype</h3>
+        <p>If a course isn't ready, it says so. No empty promises about what's coming.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="feature-num">02</span>
+        <h3>Depth over volume</h3>
+        <p>Fewer courses, done properly, beat a long list of shallow ones.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="feature-num">03</span>
+        <h3>Students shape the path</h3>
+        <p>What gets taught next is guided by what students are actually asking for.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band reveal">
+    <h2>Want to be part of this from the start?</h2>
+    <p>Reach out directly — every early message helps shape what EV Academy becomes.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">EV</span> <span class="logo-word">Academy</span>
+      <p>Real classes, real instructors, one home for learning.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Connect</h4>
+      <a href="mailto:itsmeena180@gmail.com">itsmeena180@gmail.com</a>
+      <a href="https://www.tiktok.com/@ev__creator" target="_blank" rel="noopener">@ev__creator on TikTok</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 EV Academy. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
