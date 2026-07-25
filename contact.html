@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — EV Academy</title>
+<meta name="description" content="Get in touch with EV Academy via email or TikTok.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">EV</span>
+      <span class="logo-word">Academy</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow reveal">say hello</p>
+    <h1 class="page-title reveal">Let's talk</h1>
+    <p class="hero-sub reveal" style="margin: 1.25rem auto 0;">
+      Questions, ideas, or just want to say you're excited — every
+      message is read directly.
+    </p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+
+      <div class="contact-card reveal">
+        <span class="feature-num">✉</span>
+        <h3>Email</h3>
+        <p>Best for detailed questions or course inquiries.</p>
+        <a href="mailto:itsmeena180@gmail.com" class="contact-link">itsmeena180@gmail.com</a>
+      </div>
+
+      <div class="contact-card reveal">
+        <span class="feature-num">♪</span>
+        <h3>TikTok</h3>
+        <p>Follow along for updates, behind-the-scenes, and launch news.</p>
+        <a href="https://www.tiktok.com/@ev__creator" target="_blank" rel="noopener" class="contact-link">@ev__creator</a>
+      </div>
+
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+      <h2 class="section-title">Send a message</h2>
+      <div class="form-row">
+        <label class="field">
+          <span>Your name</span>
+          <input type="text" id="cfName" required>
+        </label>
+        <label class="field">
+          <span>Your email</span>
+          <input type="email" id="cfEmail" required>
+        </label>
+      </div>
+      <label class="field">
+        <span>Message</span>
+        <textarea id="cfMessage" rows="5" required></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">Send via Email</button>
+      <p class="form-note">This opens your email app with the message pre-filled, addressed to EV Academy.</p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">EV</span> <span class="logo-word">Academy</span>
+      <p>Real classes, real instructors, one home for learning.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Connect</h4>
+      <a href="mailto:itsmeena180@gmail.com">itsmeena180@gmail.com</a>
+      <a href="https://www.tiktok.com/@ev__creator" target="_blank" rel="noopener">@ev__creator on TikTok</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 EV Academy. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
