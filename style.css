@@ -2,14 +2,15 @@
    Design tokens
    ============================================ */
 :root {
-  --ink: #0b0d12;
-  --ink-soft: #12151d;
-  --panel: #161a24;
-  --gold: #cda75d;
-  --gold-bright: #e8c37c;
-  --text: #f2ede1;
-  --muted: #9a9488;
-  --line: rgba(205,167,93,0.18);
+  --ink: #1c1a24;
+  --ink-soft: #262330;
+  --panel: #2b2837;
+  --gold: #d9a86c;
+  --gold-bright: #f4c98a;
+  --accent: #ff9d7a;
+  --text: #faf6ee;
+  --muted: #bcb3a6;
+  --line: rgba(217,168,108,0.22);
   --serif: 'Fraunces', serif;
   --sans: 'Sora', sans-serif;
 }
@@ -64,11 +65,11 @@ img { max-width: 100%; display: block; }
   border: 1px solid transparent;
 }
 .btn-primary {
-  background: var(--gold-bright);
+  background: linear-gradient(135deg, var(--gold-bright), var(--accent));
   color: var(--ink);
   font-weight: 500;
 }
-.btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
+.btn-primary:hover { box-shadow: 0 8px 24px rgba(255,157,122,0.35); transform: translateY(-2px); }
 
 .btn-ghost {
   border-color: var(--line);
@@ -84,9 +85,20 @@ img { max-width: 100%; display: block; }
    ============================================ */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(11,13,18,0.85);
+  background: rgba(28,26,36,0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
+}
+.site-header.scrolled {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+}
+.site-header.scrolled .nav-wrap { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+
+#scrollProgress {
+  position: fixed; top: 0; left: 0; height: 2.5px; width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--accent));
+  z-index: 100; transition: width 0.1s linear;
 }
 
 .nav-wrap {
@@ -129,7 +141,7 @@ img { max-width: 100%; display: block; }
    ============================================ */
 .hero {
   padding: 11vh 1.75rem 8vh;
-  background: radial-gradient(ellipse at 50% 0%, #1a1f2b 0%, var(--ink) 65%);
+  background: radial-gradient(ellipse at 50% 0%, #332f42 0%, var(--ink) 65%);
 }
 .hero-inner { max-width: 760px; margin: 0 auto; text-align: center; }
 
@@ -138,7 +150,13 @@ img { max-width: 100%; display: block; }
   font-size: clamp(2.3rem, 6vw, 3.6rem); line-height: 1.15;
   margin-bottom: 1.5rem;
 }
-.hero-title em { font-style: italic; color: var(--gold-bright); }
+.hero-title em {
+  font-style: italic;
+  background: linear-gradient(100deg, var(--gold-bright), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 .hero-sub {
   font-size: 1.05rem; color: var(--muted); max-width: 540px;
@@ -149,7 +167,7 @@ img { max-width: 100%; display: block; }
 
 .page-hero {
   padding: 9vh 1.75rem 5vh; text-align: center;
-  background: radial-gradient(ellipse at 50% 0%, #1a1f2b 0%, var(--ink) 65%);
+  background: radial-gradient(ellipse at 50% 0%, #332f42 0%, var(--ink) 65%);
 }
 .page-title {
   font-family: var(--serif); font-weight: 500;
@@ -189,6 +207,13 @@ img { max-width: 100%; display: block; }
 .feature-card {
   background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
   padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(217,168,108,0.15);
 }
 .feature-num {
   font-family: var(--serif); font-style: italic; color: var(--gold);
@@ -211,13 +236,20 @@ img { max-width: 100%; display: block; }
 .course-card {
   position: relative; background: var(--panel); border: 1px solid var(--line);
   border-radius: 10px; padding: 2.25rem 1.75rem; overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.32);
 }
 .course-card.large { grid-column: span 2; }
 .course-card.muted { opacity: 0.75; }
 
 .ribbon {
   position: absolute; top: 1.25rem; right: -2.5rem;
-  background: var(--gold-bright); color: var(--ink);
+  background: linear-gradient(120deg, var(--gold-bright), var(--accent)); color: var(--ink);
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.05em;
   padding: 0.3rem 3rem; transform: rotate(35deg);
 }
@@ -254,6 +286,13 @@ img { max-width: 100%; display: block; }
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .value-card {
   background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
 }
 .value-card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.1rem; margin-bottom: 0.5rem; }
 .value-card p { font-size: 0.85rem; color: var(--muted); }
@@ -267,6 +306,13 @@ img { max-width: 100%; display: block; }
 .contact-card {
   background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
   padding: 2rem 1.75rem; text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
 }
 .contact-card .feature-num { font-size: 1.4rem; margin-bottom: 0.5rem; }
 .contact-card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.2rem; margin-bottom: 0.4rem; }
@@ -324,6 +370,8 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visib
   max-width: 1100px; margin: 0 auto; text-align: center;
   font-size: 0.75rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1.5rem;
 }
+.footer-bottom a { color: var(--gold); border-bottom: 1px solid transparent; transition: color 0.3s ease, border-color 0.3s ease; }
+.footer-bottom a:hover { color: var(--gold-bright); border-color: var(--gold-bright); }
 
 /* ============================================
    Responsive
@@ -350,5 +398,5 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visib
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  }
-  
+   }
+                       
